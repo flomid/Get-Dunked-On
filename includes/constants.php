@@ -1,0 +1,8 @@
+<?php
+
+define("DB_SERVER", "ENTER SERVER HERE");
+define("DB_USER", "ENTER DB USER HERE");
+define("DB_PASS", "ENTER DB PASSWORD HERE");
+define("DB_NAME", "ENTER DB NAME HERE");
+
+?>

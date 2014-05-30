@@ -1,0 +1,728 @@
+/* 
+	------------------------------------------------
+	REFERENCE COLOR CODES
+	------------------------------------------------
+	#4D4D4D - Gray Text
+	#E5E5E5 - Gray background (bottom of gradient)
+	#EDA43B - Bright Orange
+	#4A8BF5 - Bright Blue
+	------------------------------------------------
+*/
+
+
+/* 
+	------------------------------------------------
+	SETUP CUSTOM FONT
+	------------------------------------------------
+*/
+
+@font-face { 
+	font-family: Roboto;
+	src: url('../fonts/Roboto-Regular.ttf'); 
+} 
+
+ @font-face { 
+	font-family: Roboto;
+	font-weight: bold; 
+	src: url('../fonts/Roboto-Bold.ttf'); 
+}
+
+@font-face { 
+	font-family: Roboto;
+	font-style: italic; 
+	src: url('../fonts/Roboto-Italic.ttf'); 
+}
+
+@font-face { 
+	font-family: Roboto;
+	font-style: italic;
+	font-weight: bold;
+	src: url('../fonts/Roboto-BoldItalic.ttf'); 
+}
+
+/* 
+	------------------------------------------------
+	BODY, CONTAINER, WRAPPER, AND HEADER
+	------------------------------------------------
+*/
+
+.clear {
+	clear: both;
+}
+
+body {
+	margin: 0;
+}
+
+#container {
+	width: 96%;
+	min-height: 100%;
+	margin: auto;
+	
+	/* Gradient For IE */ 
+	filter: progid:DXImageTransform.Microsoft.gradient(
+		startColorstr='#FFFFFF', 
+		endColorstr='#E5E5E5');
+		
+	/* Gradient For Webkit Browsers */
+	background: -webkit-gradient(
+		linear, 
+		left bottom, 
+		left top, 
+		color-stop(0, #E5E5E5), 
+		color-stop(0.5, #FFFFFF));
+		
+	/* Gradient For Firefox 3.6+ */
+	background: -moz-linear-gradient(
+		top,  
+		#FFFFFF,  
+		#E5E5E5);
+	
+	/* Gradient For IE */ 
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+		
+	/* Gradient For Webkit Browsers */
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+	
+	/* Gradient For Firefox 3.6+ */
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+	
+}
+
+#wrapper {
+	width: 800px;
+	margin: auto;
+	min-height: 90%;
+	padding-bottom: 50px;
+}
+
+#header {
+	width: 100%;
+}
+
+#logo_image {
+	float: left;
+	background: url('../images/ball.png') no-repeat;
+	width: 128px;
+	height: 128px;
+	z-index: 90;
+	position: relative;
+	left: -32px;
+}
+
+#logo_text {
+	font-size: 36px;
+	font-weight: bold;
+	color: #EDA43B;
+	position: relative;
+	top: 40px;
+	left: -32px;
+}
+
+#user_nav, #admin_nav {
+	width: 100%;
+	height: 60px;
+	position: relative;
+	margin-top: -30px;
+	border-radius: 15px 15px 15px 15px;
+	
+	/* Gradient For IE */ 
+	filter: progid:DXImageTransform.Microsoft.gradient(
+		startColorstr='#3079ED', 
+		endColorstr='#4A8BF5');
+		
+	/* Gradient For Webkit Browsers */
+	background: -webkit-gradient(
+		linear, 
+		left bottom, 
+		left top, 
+		color-stop(0, #3079ED), 
+		color-stop(0.5, #4A8BF5));
+		
+	/* Gradient For Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #3079ED, #4A8BF5);
+		
+	/* Box Shadow For IE */
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+	
+	/* Box Shadow For Webkit Browsers */	
+	-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+	
+	/* Box Shadow For Firefox 3.6+ */
+	-moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+}
+
+#admin_nav {
+	margin-top: 15px;
+}
+
+.nav_item, .nav_item_active, .auth_nav_item, .auth_nav_item_active, .admin_nav_item, .admin_nav_item_active {
+	position: relative;
+	float: left;
+	width: 33%;
+	height: 100%;
+	text-align: center;
+	border-radius: 15px 15px 15px 15px;
+}
+
+.auth_nav_item, .auth_nav_item_active {
+	width: 20%;
+}
+
+.admin_nav_item, .admin_nav_item_active {
+	width: 33%;
+}
+
+.nav_item:hover, .auth_nav_item:hover, .admin_nav_item:hover {
+	background: rgba(255,255,255,0.1);
+}
+
+.nav_item_active, .auth_nav_item_active, .admin_nav_item_active {
+	background: #EDA43B;
+}
+
+.navlink {
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 24px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	text-shadow: 0px 2px 0px rgba(0, 0, 0, 1);
+}
+
+#page_heading {
+	margin: 15px 15px 1px;
+	border-bottom: 1px solid #4D4D4D;
+	padding-bottom: 10px;
+	width: 770px;
+	height: 44px;
+}
+
+#main_heading, #sub_heading {
+	float: left;
+	width: 50%;
+	margin: auto;
+	line-height: 44px;
+}
+
+#sub_heading {
+	text-align: right;
+	font-size: 14px;
+}
+
+/* 
+	------------------------------------------------
+	TEXT AND LINKS
+	------------------------------------------------
+*/	
+
+body, h1, h2, h3, h4, h5, h6, p, ul, li, a, a:active, a:visited, a:link {
+	font-family: "Roboto", "Helvetica", "Arial";
+	color: #4D4D4D;
+}
+
+h2 {
+	font-size: 24px;
+	font-weight: normal;
+}
+
+h4 {
+	font-weight: normal;
+	font-size: 16px;
+}
+
+a, a:active, a:visited, a:link {
+	text-decoration: none;
+}
+
+/* 
+	------------------------------------------------
+	CONTENT
+	------------------------------------------------
+*/
+
+#content {
+	margin: 0px 15px;
+	padding-bottom: 3em;
+}
+
+.form_container {
+	margin: 0px 5%;
+	padding: 15px 0px;
+}
+
+.left_column {
+	float: left;
+}
+
+.right_column {
+	float: right;
+}
+
+.form_field {
+	height: 50px;
+	width: 310px;
+	margin: 0px 0px 10px 0px;
+	font-family: "Roboto";
+	font-size: 24px;
+	color: rgba(77, 77, 77, 0.75);
+	border: 1px solid rgba(0, 0, 0, 0.4);
+	padding-left: 10px;
+	
+	/* Box Shadow For IE */
+	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2) inset;
+	
+	/* Box Shadow For Webkit Browsers */	
+	-webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2) inset;
+	
+	/* Box Shadow For Firefox 3.6+ */
+	-moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2) inset;
+}
+
+textarea.form_field {
+	width: 100%;
+	max-width: 100%;
+	height: 150px;
+	font-size: 14px;
+	padding: 10px;
+}
+
+#send_to_all {
+	width: 400px;
+	margin: auto;
+	display: block;
+	text-align: center;
+}
+
+.form_label {
+	margin: 0;
+}
+
+#email_subscribe, #stay_signedin {
+	height: 50px;
+	width: 310px;
+	position: relative;
+	top: 3px;
+}
+
+#stay_signedin {
+	height: 20px;
+	width: 215px;
+	margin: auto;
+}
+
+#stay_signedin #checkbox_container {
+	float: right;
+	top: -22px;
+}
+
+#checkbox_container {
+	width: 94px;
+	height: 27px;
+	float: left;
+	position: relative;
+	top: 11px;
+}
+
+#reg_check {
+	display: block;
+	width: 94px;
+	height: 27px;
+	overflow: hidden;
+	border-radius: 3px;
+	float: left;
+}
+
+#reg_check input[type=checkbox] {
+  display: none;
+}
+
+#reg_check input[type=checkbox] + label {
+  text-indent: -9999px;
+  display: block;
+  width: 150px;
+  height: 27px;
+  line-height: 27px;
+  background: transparent url('../images/sprite2.png') no-repeat -56px 0;
+  -webkit-transition: background-position 0.3s ease-in-out;
+  -moz-transition: background-position 0.3s ease-in-out;
+}
+
+#reg_check input[type=checkbox]:checked + label {
+  -webkit-transition: background-position 0.3s ease-in-out;
+  -moz-transition: background-position 0.3s ease-in-out;
+  background-position: -3px 0;
+}
+
+#submit_button {
+	margin: auto;
+	text-align: center;
+	position: relative;
+	top: 30px;
+	z-index: 9999;
+}
+
+.submit {
+	position: relative;
+	width: 200px;
+	height: 60px;
+	border-radius: 15px 15px 15px 15px;
+	border: 0;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 24px;
+	text-shadow: 0px 2px 0px rgba(0, 0, 0, 1);
+	
+	/* Gradient For IE */ 
+	filter: progid:DXImageTransform.Microsoft.gradient(
+		startColorstr='#3079ED', 
+		endColorstr='#4A8BF5');
+		
+	/* Gradient For Webkit Browsers */
+	background: -webkit-gradient(
+		linear, 
+		left bottom, 
+		left top, 
+		color-stop(0, #3079ED), 
+		color-stop(0.5, #4A8BF5));
+		
+	/* Gradient For Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #3079ED, #4A8BF5);
+		
+	/* Box Shadow For IE */
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+	
+	/* Box Shadow For Webkit Browsers */	
+	-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+	
+	/* Box Shadow For Firefox 3.6+ */
+	-moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+}
+
+#signin_form {
+	position: relative;
+	margin: auto;
+	width: 310px;
+}
+
+.player_availability, .player_availability_active, #calendar_heading, #totals {
+	width: 740px;
+	height: 52px;
+	background: #E5E5E5;
+	padding: 0px 15px;
+	margin: 0px 0px 1px 0px;
+}
+
+.player_availability_active {
+	background: rgba(255,255,255, 0.5);
+}
+
+#calendar_heading {
+	background: none;
+	border-bottom: 1px solid #4D4D4D;
+}
+
+#totals {
+	background: none;
+	border-top: 1px solid #4D4D4D;
+}
+
+.player_icon {
+	width: 40px;
+	height: 40px;
+	float: left;
+	margin: 5px;
+}
+
+.player_icon img {
+	width: 40px;
+	height: 40px;
+	border-radius: 7px;
+	
+	/* Box Shadow For IE */
+	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+	
+	/* Box Shadow For Webkit Browsers */	
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+	
+	/* Box Shadow For Firefox 3.6+ */
+	-moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.player_name {
+	float: left;
+	margin: 8px 0px 8px 15px;
+	line-height: 18px;
+	width: 235px;
+	height: 36px;
+}
+
+.username, .day_of_week, .month, #total {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0;
+}
+
+.username a:hover {
+	text-decoration: underline;
+}
+
+#total {
+	margin-top: 7px;
+	text-align: right;
+}
+
+.full_name {
+	font-size: 14px;
+	margin: 0;
+}
+
+.mark, .calendar {
+	float: left;
+	margin: 0px 25px;
+	width: 60px;
+	text-align: center;
+}
+
+.calendar {
+	margin: 0;
+	width: 110px;
+	height: 52px;
+}
+
+.mark_text, .count_text, #avail_text1, #avail_text2, #avail_text3, #avail_text4 {
+	float: left;
+	margin: 0;
+	line-height: 52px;
+	width: 60px;
+}
+
+#avail_text1, #avail_text2, #avail_text3, #avail_text4 {
+	font-weight: bold;
+}
+
+.count_text {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.day_of_week {
+	
+	/* Div rotation for Webkit Browsers */
+	-webkit-transform: rotate(-90deg); 
+	
+	/* Div rotation for Firefox */
+	-moz-transform: rotate(-90deg);
+	
+	/* Div rotation for IE */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	
+	float: left;
+	margin: 16px 0px 0px 2px;
+	right: -10px;
+	position: relative;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.month {
+	float: left;
+	font-weight: normal;
+	width: 50px;
+	margin-top: 2px;
+}
+
+.day {
+	font-size: 24px;
+	margin: 0;
+	width: 50px;
+	float: left;
+	font-weight: bold;
+}
+
+.invite_message, .register_message {
+	border: 1px solid;
+	width: 450px;
+	margin: auto;
+	height: 44px;
+	line-height: 44px;
+	font-weight: bold;
+}
+
+.register_message {
+	color: red; 
+	background: rgba(255, 0, 0, 0.3);
+}
+
+.errors {
+	margin-top: 15px;
+}
+
+.errors ul {
+	margin: auto;
+	list-style: none;
+	padding: 0;
+	text-align: center;
+}
+
+.errors ul li {
+	color: red;
+	font-weight: bold;
+}
+
+#profile_box {
+	margin: 15px 15px 0px;
+}
+
+#photo_box, #photo_box img {
+	float: left;
+	margin: 0px 44px 0px 0px;
+	width: 196px;
+	height: 196px;
+	background: transparent;
+	border-radius: 32px;
+	
+	/* Box Shadow For IE */
+	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+	
+	/* Box Shadow For Webkit Browsers */	
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+	
+	/* Box Shadow For Firefox 3.6+ */
+	-moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+#photo_box img {
+	margin: 0;
+	
+	/* Box Shadow For IE */
+	box-shadow: none;
+	
+	/* Box Shadow For Webkit Browsers */	
+	-webkit-box-shadow: none;
+	
+	/* Box Shadow For Firefox 3.6+ */
+	-moz-box-shadow: none;
+	
+	position: relative;
+	z-index: 10;
+}
+
+#profile_column1, #profile_column2 {
+	float: left;
+	height: 196px;
+	width: 230px;
+	margin: 0px 10px;
+	line-height: 40px;
+}
+
+#profile_box p {
+	font-size: 20px;
+}
+
+#profile_column1 p {
+	font-weight: bold;
+}
+
+.black_overlay{
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index:1001;
+	-moz-opacity: 0.8;
+	opacity:.80;
+	filter: alpha(opacity=80);
+}
+ 
+.white_content {
+	display: none;
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	width: 50%;
+	height: 50%;
+	padding: 16px;
+	border: 16px solid orange;
+	background-color: white;
+	z-index: 1002;
+	overflow: auto;
+}
+
+#change_photo {
+	height: 50px;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 100;
+	position: relative;
+	border-bottom-right-radius: 32px;
+	border-bottom-left-radius: 32px;
+	top: 146px;
+}
+
+#change_photo p {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: white;
+}
+
+.mark_text img {
+	width: 20px;
+	height: 20px;
+	margin: 15px;
+}
+
+#avail_text1 a img, #avail_text2 a img, #avail_text3 a img, #avail_text4 a img {
+	width: 25px;
+	height: 25px;
+	margin: 12px;
+}
+
+.about_map {
+	float: right;
+	padding: 0px 15px;
+}
+
+.about_question {
+	padding: 0px 15px;
+}
+
+/* 
+	------------------------------------------------
+	FOOTER
+	------------------------------------------------
+*/
+
+#footer {
+	margin: auto;
+	text-align: center;
+	position: relative;
+	margin-top: -3em;
+}
+
+.footer {
+	font-size: 12px;
+	margin: 0;
+}
+
+/*
+	------------------------------------------------
+	FIREFOX ONLY CSS (FIXES HEADER ISSUE DUE TO FLOATS)
+	------------------------------------------------
+*/
+
+@-moz-document url-prefix() {
+	
+	body {
+		margin: -24px auto;
+		height: 100%;
+	}
+	
+    #user_nav, #admin_nav {
+        margin: 0px 0px 15px 0px;
+    }
+
+}
